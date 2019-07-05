@@ -23,7 +23,7 @@ app.use(cors());
  
 app.get("/", (req,res) => {
     res.json("index root"); 
-    HTMLFormControlsCollection.log('server test')
+    console.log('server test');
 });
 
 app.post("/signin", signin.handleSignInRoute(bcrypt, db));
