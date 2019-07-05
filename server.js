@@ -14,8 +14,6 @@ const db            = require('knex')({
     }
 });
 
-
-
 const app       = express();
 const saltRounds = 10;
 var salt = bcrypt.genSaltSync(saltRounds);
@@ -23,7 +21,10 @@ var salt = bcrypt.genSaltSync(saltRounds);
 app.use(bodyParser.json());
 app.use(cors());
  
-app.get("/", (req,res) => {res.json("index root"); });
+app.get("/", (req,res) => {
+    res.json("index root"); 
+    HTMLFormControlsCollection.log('server test')
+});
 
 app.post("/signin", signin.handleSignInRoute(bcrypt, db));
 
