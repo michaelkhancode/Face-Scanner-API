@@ -5,6 +5,7 @@ const app = new Clarifai.App({
 });
 
 const handleApiRoute = (req, res) => {
+    console.log(req.body.input)
     app.models.predict("a403429f2ddf4b49b307e318f00e528b", req.body.input)
     .then ( data => {
         res.json(data);
