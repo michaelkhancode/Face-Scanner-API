@@ -9,7 +9,10 @@ const handleApiRoute = (req, res) => {
     .then ( data => {
         res.json(data);
     })
-    .catch (err => res.status(400).json(`unable to work with api, ${err}`))
+    .catch (err => {
+        console.log(err);
+        res.status(400).json(`unable to work with api`)
+    })
 }
 
 const handleImageRoute = (db) => (req, res) => {
